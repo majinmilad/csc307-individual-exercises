@@ -1,6 +1,6 @@
 // src/MyApp.jsx
 
-import React from "react";
+import React, { useState } from "react";
 import Table from "./Table";
 
 function MyApp() {

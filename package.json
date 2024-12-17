@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-	"start": "npm run start --prefix packages/react-frontend",
+    "start": "npm run start --prefix packages/react-frontend",
     "build": "npm run build --prefix packages/react-frontend",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,9 @@
   "license": "ISC",
   "description": "",
   "workspaces": [
-        "packages/*"
-  ]
+    "packages/*"
+  ],
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }

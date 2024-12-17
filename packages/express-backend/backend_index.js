@@ -1,10 +1,12 @@
 import express from "express";
+import cors from "cors";
 
 // express API setup
 
 const app = express();
 const port = 8000;
 
+app.use(cors()); // enables all CORS requests
 app.use(express.json());
 
 app.listen(port, () => {

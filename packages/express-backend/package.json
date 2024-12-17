@@ -6,12 +6,13 @@
   "main": "backend_index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"dev": "npx nodemon backend_index.js",
+    "dev": "npx nodemon backend_index.js",
     "start": "node backend_index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.21.2"
   }
 }

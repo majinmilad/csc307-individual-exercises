@@ -1,0 +1,15 @@
+{
+  "name": "express-backend",
+  "version": "1.0.0",
+  "description": "Backend subpackage for IE2 and creating our backend in our monorepo",
+  "type": "module",
+  "main": "backend_index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
 
 // express API setup
@@ -55,17 +55,18 @@ app.get("/users/:id", (req, res) => {
 // adds a user
 app.post("/users", (req, res) => {
   const userToAdd = req.body;
+  userToAdd["id"] = Math.floor(Math.random() * 100000).toString();
   addUser(userToAdd);
-  res.send();
+  res.status(201).send(userToAdd);
 });
 
 // deletes first instance of a user by id
 app.delete("/users/:id", (req, res) => {
   const id = req.params.id;
-  const index = users["users_list"].findIndex((user) => user.id === id);
+  const index = users["users_list"].findIndex((user) => user.id.toString() === id.toString());
   if (index > -1) {
     users["users_list"].splice(index, 1);
-    res.status(200).send("User deleted successfully");
+    res.status(204).send("User found and deleted successfully");
   } else {
     res.status(404).send("User not found");
   }

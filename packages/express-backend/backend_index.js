@@ -1,6 +1,8 @@
 import express, { json } from "express";
 import cors from "cors";
 
+import { findUserById, findUserByName, findUserByJob, addUser } from "./services/user-service.js";
+
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
@@ -16,7 +18,7 @@ mongoose
 // express API setup
 
 const app = express();
-const port = 8000;
+const port = 8000; // port for the server side
 
 app.use(cors()); // enables all CORS requests
 app.use(express.json());
@@ -38,7 +40,7 @@ app.get("/users", (req, res) => {
   const name = req.query.name;
   const job = req.query.job;
   
-  let result = users;
+  let result = users; // if no name or job is specified it starts with with the whole users list and sends that   
 
   // filter by name and/or job if applicable
   if (name != undefined) {
@@ -86,25 +88,25 @@ app.delete("/users/:id", (req, res) => {
 
 // helpers
 
-const findUserByName = (name, users_list) => {
-  return users_list["users_list"].filter(
-    (user) => user["name"] === name
-  );
-};
+// const findUserByName = (name, users_list) => {
+//   return users_list["users_list"].filter(
+//     (user) => user["name"] === name
+//   );
+// };
 
-const findUserByJob = (job, users_list) => {
-  return users_list["users_list"].filter(
-    (user) => user["job"] === job
-  );
-};
+// const findUserByJob = (job, users_list) => {
+//   return users_list["users_list"].filter(
+//     (user) => user["job"] === job
+//   );
+// };
 
-const findUserById = (id) =>
-  users["users_list"].find((user) => user["id"] === id);
+// const findUserById = (id) =>
+//   users["users_list"].find((user) => user["id"] === id);
 
-const addUser = (user) => {
-  users["users_list"].push(user);
-  return user;
-};
+// const addUser = (user) => {
+//   users["users_list"].push(user);
+//   return user;
+// };
 
 // data
 

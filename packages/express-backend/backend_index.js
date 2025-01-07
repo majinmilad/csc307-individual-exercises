@@ -1,6 +1,18 @@
 import express, { json } from "express";
 import cors from "cors";
 
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+
+dotenv.config();
+
+const { MONGO_CONNECTION_STRING } = process.env;
+
+mongoose.set("debug", true);
+mongoose
+  .connect(MONGO_CONNECTION_STRING)
+  .catch((error) => console.log(error));
+
 // express API setup
 
 const app = express();

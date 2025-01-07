@@ -1,4 +1,17 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const { MONGO_CONNECTION_STRING } = process.env;
+
+mongoose.set("debug", true);
+mongoose
+mongoose.connect(MONGO_CONNECTION_STRING, {
+  dbName: "users", // explicitly set database name
+  })
+  .then(() => console.log("Connected to MongoDB!"))
+  .catch((error) => console.log(error));
 
 const UserSchema = new mongoose.Schema(
   {

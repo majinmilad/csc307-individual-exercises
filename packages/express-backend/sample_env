@@ -1,0 +1,2 @@
+MONGO_CONNECTION_STRING=mongodb+srv://<username>:<password>@<cluster>.cifd4.mongodb.net/<tablename>?retryWrites=true&w=majority&appName=<APPNAME>
+DB_NAME=<name-of-database-table>
